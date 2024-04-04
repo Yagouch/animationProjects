@@ -16,19 +16,14 @@ body {
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
+    font-size: medium;
 }
 
 h1 {
     font-size: 4rem;
 }
-
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--text);
-    color: #EEEEEE;
-    margin-bottom: 6rem;
+h2 {
+    font-size: 2.4em;
 }
 
 .container {
@@ -39,12 +34,9 @@ h1 {
     background-color: var(--body);
     border-radius: 1rem;
     box-shadow: 0px 0px 26px -4px rgba(0,0,0,0.75);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+    text-align: center;
 }
+
 .box {
     width: 20rem;
     height: 20rem;
@@ -55,42 +47,78 @@ h1 {
     font-weight: bold;
 }
 
+.container-box {
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.lista {
+    width: 175px;
+    text-align: left;
+    margin: 0 auto;
+}
+.lista ul, .lista ol {
+
+    padding: 0;
+}
+
+
 
 
 /* Animation */
 
-.gallery {
-    --num-images: 3;
-    position: relative;
-    margin: 0 auto;
+@keyframes parallax {
+	to {
+        box-shadow: 0 10px 10px -3px rgba(0,0,0,.56);
+        height: 50px;
+	}
 }
-.gallery__scrollcontainer{
-    overflow-x: scroll;
+@keyframes shrink-name {
+	to { 
+        padding: 0;
+        margin: 0;
+        font-size: 3rem; 
+    }
+}
+@keyframes opacity-logo {
+    to { 
+        opacity: 0;
+    }
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
     display: flex;
-    width: 354px;
-    scroll-timeline: --gallery_scrollcontainer inline;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: var(--text);
+    color: #EEEEEE;
+    margin-bottom: 6rem;
+    animation: parallax linear both;
+	animation-timeline: scroll();
+	animation-range: 0 150px;
 
 }
 
-.gallery__progress {
-    position: absolute;
-    width: 100%; 
-    height: 1rem;
-    transform-origin: 0 50%;
-    background-color: red;
-    transform: scaleX(calc(1 / var(--num-images)));
-    animation: auto grow-progress linear forwards;
-    animation-timeline: --gallery_scrollcontainer;
-}
-.gallery__entry {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: #fff;
-    padding-bottom: 1rem;
+.header__heading{
+    animation: shrink-name linear both;
+	animation-timeline: scroll();
+	animation-range: 0 150px;
 }
 
+.header__image {
+    width: 5%;
+    color: var(--bg);
+    filter: invert(100%) sepia(8%) saturate(37%) hue-rotate(239deg) brightness(114%) contrast(87%);
 
-@keyframes grow-progress {
-    to { transform: scaleX(1); }
+    animation: auto opacity-logo linear both;
+    animation-timeline: scroll();
+    animation-range: 0 150px;
 }
