@@ -73,7 +73,7 @@ h2 {
 @keyframes parallax {
 	to {
         box-shadow: 0 10px 10px -3px rgba(0,0,0,.56);
-        height: 50px;
+        
 	}
 }
 @keyframes shrink-name {
@@ -85,7 +85,8 @@ h2 {
 }
 @keyframes opacity-logo {
     to { 
-        opacity: 0;
+        opacity: 0.4;
+        width: 0%;
     }
 }
 
@@ -93,10 +94,13 @@ h2 {
     position: sticky;
     top: 0;
     width: 100%;
-    display: flex;
+    
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr;
+    column-gap: 20px;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+
     padding: 15px;
     background-color: var(--text);
     color: #EEEEEE;
@@ -114,7 +118,7 @@ h2 {
 }
 
 .header__image {
-    width: 5%;
+    width: 15%;
     color: var(--bg);
     filter: invert(100%) sepia(8%) saturate(37%) hue-rotate(239deg) brightness(114%) contrast(87%);
 
