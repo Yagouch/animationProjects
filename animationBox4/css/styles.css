@@ -29,7 +29,7 @@ h2 {
 .container {
     max-width: min(95%,90rem); 
     min-height: 150rem;
-    padding: 5rem;
+    padding: 1rem 5rem;
     margin: 0 auto;
     background-color: var(--body);
     border-radius: 1rem;
@@ -69,60 +69,3 @@ h2 {
 
 
 /* Animation */
-
-@keyframes parallax {
-	to {
-        box-shadow: 0 10px 10px -3px rgba(0,0,0,.56);
-        
-	}
-}
-@keyframes shrink-name {
-	to { 
-        padding: 0;
-        margin: 0;
-        font-size: 3rem; 
-    }
-}
-@keyframes opacity-logo {
-    to { 
-        opacity: 0.4;
-        width: 0%;
-    }
-}
-
-.header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    
-    display: grid;
-    grid-template-columns: 3fr 2fr 3fr;
-    column-gap: 20px;
-    justify-items: center;
-    align-items: center;
-
-    padding: 15px;
-    background-color: var(--text);
-    color: #EEEEEE;
-    margin-bottom: 6rem;
-    animation: parallax linear both;
-	animation-timeline: scroll();
-	animation-range: 0 150px;
-
-}
-
-.header__heading{
-    animation: shrink-name linear both;
-	animation-timeline: scroll();
-	animation-range: 0 150px;
-}
-
-.header__image {
-    width: 15%;
-    color: var(--bg);
-    filter: invert(100%) sepia(8%) saturate(37%) hue-rotate(239deg) brightness(114%) contrast(87%);
-
-    animation: auto opacity-logo linear both;
-    animation-timeline: scroll();
-    animation-range: 0 150px;
-}
