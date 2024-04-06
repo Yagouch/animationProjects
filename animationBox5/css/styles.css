@@ -83,6 +83,8 @@ h2 {
     animation: auto PaddingHeader linear forwards;
     animation-timeline: scroll();
     animation-range: 0 150px;
+
+    z-index: 1;
 }
 
 .header--wrap {
@@ -160,5 +162,105 @@ h2 {
     to {
         
         box-shadow: 10 15px 15px 3px rgba(0,0,0,.86);
+    }
+}
+
+/* Montañas Parallax */
+
+.mountains {
+    height: 700px;
+}
+.mountains img:nth-child(1) {
+    margin-top: -100px;
+}
+.mountains img:nth-child(2) {
+    filter: invert(16%) sepia(24%) saturate(12%) hue-rotate(347deg) brightness(103%) contrast(91%);   
+    margin-top: -450px;
+}
+.mountains img:nth-child(3) {
+    filter: invert(32%) sepia(0%) saturate(0%) hue-rotate(182deg) brightness(100%) contrast(93%);
+    margin-top: -450px;
+}
+.mountains img:nth-child(4) {
+    filter: invert(32%) sepia(0%) saturate(0%) hue-rotate(182deg) brightness(100%) contrast(93%);
+    margin-top: -450px;
+}
+.mountains img:nth-child(5) {
+    filter: invert(66%) sepia(3%) saturate(24%) hue-rotate(1deg) brightness(93%) contrast(84%);
+    margin-top: -450px;
+}
+.mountains img:nth-child(6) {
+    filter: invert(77%) sepia(9%) saturate(14%) hue-rotate(344deg) brightness(96%) contrast(90%);
+    margin-top: -450px;
+}
+.mountains img:nth-child(7) {
+    filter: invert(91%) sepia(1%) saturate(22%) hue-rotate(105deg) brightness(100%) contrast(89%);
+    margin-top: -460px;
+}
+ 
+
+.mountains img:nth-child(2) {
+    animation: auto move2 linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: start;
+}
+@keyframes move2 {
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+.mountains img:nth-child(3) {
+    animation: auto move3 linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: start;
+}
+@keyframes move3 {
+    to {
+        transform: translateY(-200px);
+    }
+}
+
+.mountains img:nth-child(4) {
+    animation: auto move4 linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: start;
+}
+@keyframes move4 {
+    to {
+        transform: translateY(-300px);
+    }
+}
+
+.mountains img:nth-child(5) {
+    animation: auto move5 linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: start;
+}
+@keyframes move5 {
+    to {
+        transform: translateY(-400px);
+    }
+}
+
+.mountains img:nth-child(6) {
+    animation: auto move6 linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: start;
+}
+@keyframes move6 {
+    to {
+        transform: translateY(-500px);
+    }
+}
+
+.mountains img:nth-child(7) {
+    animation: auto move7 linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: start;
+}
+@keyframes move7 {
+    to {
+        transform: translateY(-550px);
     }
 }
